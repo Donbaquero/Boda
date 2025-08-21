@@ -17,23 +17,37 @@ function initializeInvitation() {
     const openInvitationBtn = document.getElementById('open-invitation-btn');
     const mainContent = document.getElementById('main-content');
 
-    openInvitationBtn.addEventListener('click', function() {
-        // Ocultar la carta de invitación con animación
-        invitationCover.classList.add('hidden');
-        
-        // Mostrar el contenido principal
-        setTimeout(() => {
-            mainContent.classList.add('visible');
-            // Reproducir música automáticamente después de abrir la invitación
-            playMusic();
-        }, 800);
-    });
+    if (openInvitationBtn && invitationCover && mainContent) {
+        openInvitationBtn.addEventListener('click', function() {
+            console.log('Botón de invitación clickeado');
+            
+            // Ocultar la carta de invitación con animación
+            invitationCover.style.opacity = '0';
+            invitationCover.style.visibility = 'hidden';
+            
+            // Mostrar el contenido principal
+            setTimeout(() => {
+                mainContent.style.display = 'block';
+                mainContent.style.opacity = '1';
+                // Reproducir música automáticamente después de abrir la invitación
+                playMusic();
+            }, 800);
+        });
+    } else {
+        console.error('Elementos de invitación no encontrados');
+    }
 }
 
 // Inicializar el reproductor de audio
 function initializeAudio() {
     const audio = document.getElementById('background-music');
     const playPauseBtn = document.getElementById('play-pause-btn');
+    
+    if (!audio || !playPauseBtn) {
+        console.error('Elementos de audio no encontrados');
+        return;
+    }
+
     const playIcon = playPauseBtn.querySelector('i');
 
     // Función para reproducir música
@@ -41,7 +55,7 @@ function initializeAudio() {
         if (audio && !isPlaying) {
             audio.play().then(() => {
                 isPlaying = true;
-                playIcon.className = 'fas fa-pause';
+                if (playIcon) playIcon.className = 'fas fa-pause';
             }).catch(error => {
                 console.log('Auto-play prevented:', error);
                 // Si el auto-play falla, mostrar mensaje al usuario
@@ -56,11 +70,11 @@ function initializeAudio() {
         
         if (isPlaying) {
             audio.pause();
-            playIcon.className = 'fas fa-play';
+            if (playIcon) playIcon.className = 'fas fa-play';
             isPlaying = false;
         } else {
             audio.play();
-            playIcon.className = 'fas fa-pause';
+            if (playIcon) playIcon.className = 'fas fa-pause';
             isPlaying = true;
         }
     });
@@ -68,7 +82,7 @@ function initializeAudio() {
     // Actualizar estado del botón cuando el audio termina
     audio.addEventListener('ended', function() {
         isPlaying = false;
-        playIcon.className = 'fas fa-play';
+        if (playIcon) playIcon.className = 'fas fa-play';
     });
 
     // Manejar errores de audio
@@ -112,8 +126,8 @@ function showPlayMessage() {
 function initializeCountdown() {
     // Función para actualizar el cronómetro
     function updateCountdown() {
-        // Fecha de la boda: 15 de Noviembre, 2025 a las 2:00 PM
-        const weddingDate = new Date('November 15, 2025 14:00:00').getTime();
+        // Fecha de la boda: 15 de Diciembre, 2024 a las 2:00 PM
+        const weddingDate = new Date('December 15, 2024 14:00:00').getTime();
         const now = new Date().getTime();
         const distance = weddingDate - now;
 

@@ -17,11 +17,11 @@
 - **Zoom**: Ajusta según prefieras (recomendado 15-17)
 - **Estilo**: Puedes personalizar colores y estilos
 
-## 🔧 Ejemplo de Código
+## 🔧 Ejemplo de Código (Actualizado para Colombia)
 
 ```html
 <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.5!2d-100.7!3d20.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU0JzAwLjAiTiAxMDDCsDQyJzAwLjAiVw!5e0!3m2!1ses!2smx!4v1234567890"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.5!2d-76.6242683!3d2.5026855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMzAnMDkuNyJOIDc2wrAzNycwMC4wIlc!5e0!3m2!1ses!2sco!4v1234567890"
     width="100%" 
     height="450" 
     style="border:0;" 
@@ -30,6 +30,12 @@
     referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 ```
+
+### 📍 Ubicación de la Boda:
+- **Lugar**: Finca La Esperanza, Vereda El Paraíso
+- **Ciudad**: Cali, Valle del Cauca, Colombia
+- **Coordenadas**: 2°30'09.7"N 76°37'27.4"W
+- **Enlace directo**: https://www.google.com/maps/place/2%C2%B030'09.7%22N+76%C2%B037'27.4%22W/@2.5026855,-76.6268432,17z/
 
 ## 📱 Responsive Design
 
@@ -69,7 +75,7 @@ El mapa ya está configurado para ser responsivo:
 Busca esta línea (aproximadamente línea 108):
 ```html
 <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3740.5!2d-100.7!3d20.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDU0JzAwLjAiTiAxMDDCsDQyJzAwLjAiVw!5e0!3m2!1ses!2smx!4v1234567890"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.5!2d-76.6242683!3d2.5026855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMsKwMzAnMDkuNyJOIDc2wrAzNycwMC4wIlc!5e0!3m2!1ses!2sco!4v1234567890"
     width="100%" 
     height="450" 
     style="border:0;" 
@@ -79,7 +85,7 @@ Busca esta línea (aproximadamente línea 108):
 </iframe>
 ```
 
-Reemplaza la URL del `src` con tu código de embed.
+**¡ACTUALIZADO!** Este código ya incluye las coordenadas correctas para la ubicación en Cali, Colombia.
 
 ## 📍 Alternativas al Mapa de Google
 
